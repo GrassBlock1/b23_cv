@@ -6,7 +6,6 @@ from selenium.webdriver.firefox.options import Options
 
 def init_driver():
     options = Options()
-    options.binary_location = '/usr/bin/firefox_developer_edition'
     options.add_argument('-headless')
     firefox_profile = FirefoxProfile()
     firefox_profile.set_preference("network.proxy.type", '0')

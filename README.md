@@ -8,7 +8,7 @@
 
 ## 使用
 ### 安装依赖
-此脚本默认依赖于 Firefox 开发者版和 geckodriver，请确保已安装 Firefox 开发者版以及对应版本的 geckodriver。
+此脚本默认依赖于 geckodriver，请确保已安装兼容的 geckodriver。
 
 如果想要使用其他浏览器，请直接修改 `b23_cv/init_driver.py` 的相关部分为其他浏览器的 WebDriver。
 
@@ -28,8 +28,6 @@ pip install -r requirements.txt # 安装依赖
 2. 单篇文章： `https://www.bilibili.com/read/cv12345678`
 
 ## 常见问题
-### 为什么要使用 Firefox 开发者版？
-因为这个脚本主要是为了方便自己使用，而我自己使用的浏览器就是 Firefox 开发者版，所以为了方便测试就直接用了。
 ### 导出格式问题？
 由于选择内容容器的逻辑以及使用的`markdownify`模块的限制，一些特殊的排版可能会显示错误，暂时无法解决。
 
