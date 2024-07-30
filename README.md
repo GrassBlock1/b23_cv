@@ -21,7 +21,16 @@ pip install -r requirements.txt # 安装依赖
 ```
 
 ### 使用
-直接运行 `main.py` 即可，根据提示输入支持的链接和输出文件夹（可选）即可下载。
+```bash
+python bcv.py [-h] [-o OUTPUT] url
+```
+比如：
+```bash
+python bcv.py https://www.bilibili.com/read/cv12345678
+```
+在终端中运行 `python bcv.py -h` 查看帮助信息。
+
+或者运行 `bcv_ia.py`，根据提示输入支持的链接和输出文件夹（可选）即可下载。
 
 链接示例：
 1. 专栏文集： `https://www.bilibili.com/read/readlist/rl335022`
@@ -35,9 +44,9 @@ pip install -r requirements.txt # 安装依赖
 
 ## TODO
 - [ ] 直接调用默认浏览器以及对应的 WebDriver
-- [ ] 支持导出 HTML 格式
+- [ ] 支持导出带有样式的 HTML
 - [ ] 支持自定义导出格式
-- [ ] 命令行参数支持
+- [x] 命令行参数支持
 
 ## 贡献
 目前这个脚本只是一个“能用”的下载器，如果有更多的需求或者想要添加更多的功能，欢迎提交 Issue 和 Pull Request。
