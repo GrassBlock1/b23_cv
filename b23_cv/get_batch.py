@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
+from b23_cv import cleanup_filename
 from b23_cv.download_image import download_image
 from b23_cv.init_driver import init_driver
 
@@ -70,8 +71,11 @@ def __main__(stdin_url, stdin_folder):
         # 将HTML内容转换为Markdown
         markdown_content = markdownify.markdownify(str(soup), heading_style="ATX")
 
+        # 尝试解决标题中包含 / 等特殊字符时无法保存的问题
+        file_name = cleanup_filename.sanitize_filename(title)
+
         # 保存Markdown内容到文件
-        markdown_file_path = os.path.join(output_folder, f'{title}.md')
+        markdown_file_path = os.path.join(output_folder, f'{file_name}.md')
         with open(markdown_file_path, 'w', encoding='utf-8') as f:
             f.write(markdown_content)
         print(f'Saved {markdown_file_path}')
