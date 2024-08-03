@@ -22,7 +22,7 @@ pip install -r requirements.txt # 安装依赖
 
 ### 使用
 ```bash
-python bcv.py [-h] [-o OUTPUT] url
+python bcv.py [-h] [-o OUTPUT] [-f html/markdown ] url
 ```
 比如：
 ```bash
@@ -43,9 +43,9 @@ python bcv.py https://www.bilibili.com/read/cv12345678
 同时由于同样的原因，导出 HTML 暂时无法实现。
 
 ## TODO
-- [ ] 直接调用默认浏览器以及对应的 WebDriver
-- [ ] 支持导出带有样式的 HTML
-- [ ] 支持自定义导出格式
+- [ ] 直接调用默认浏览器对应的 WebDriver
+- [x] 支持导出带有样式的 HTML （目前样式仍然比较简单）
+- [x] 支持自定义导出格式
 - [x] 命令行参数支持
 
 ## 贡献

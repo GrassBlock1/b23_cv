@@ -35,15 +35,19 @@ parser = argparse.ArgumentParser(
 parser.add_argument('URL', metavar='URL', nargs=1, help='the URL of the '
                                                         'article/readlist or '
                                                         'the column')
-parser.add_argument('--output', action='append_const',
-                    const='folder', default="output",
+parser.add_argument('--output', '-o',
+                    const='folder', default="output", nargs="?",
                     help='the folder to be saved, default is "./output"')
+parser.add_argument('--format', '-f',
+                    const='format', default="markdown", nargs="?",
+                    help='the format to be saved, default is markdown')
 args = parser.parse_args()
 
 url = args.URL[0]
 output_folder = args.output
+output_format = args.format
 
 if url.__contains__('read/cv'):
-    get_single.__main__(stdin_url=url, stdin_folder=output_folder)
+    get_single.__main__(stdin_url=url, stdin_folder=output_folder, stdin_format=output_format)
 else:
-    get_batch.__main__(stdin_url=url, stdin_folder=output_folder)
+    get_batch.__main__(stdin_url=url, stdin_folder=output_folder, stdin_format=output_format)

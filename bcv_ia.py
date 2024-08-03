@@ -31,7 +31,9 @@ output_folder = str(
     input(
         "Please input a path to save passages (relative to this python script), default is 'output':")) or "output"
 
+output_format = str(input("Please input the format to save, default is 'markdown':")) or "markdown"
+
 if url.__contains__('read/cv'):
-    get_single.__main__(stdin_url=url, stdin_folder=output_folder)
+    get_single.__main__(stdin_url=url, stdin_folder=output_folder, stdin_format=output_format)
 else:
-    get_batch.__main__(stdin_url=url, stdin_folder=output_folder)
+    get_batch.__main__(stdin_url=url, stdin_folder=output_folder, stdin_format=output_format)
