@@ -1,6 +1,6 @@
 # Bilibili 专栏文章下载器
 ## 介绍
-一个基于 [Selenium](https://www.selenium.dev/) 的 Bilibili 专栏文章下载工具，可以将专栏文章下载为 Markdown 格式的文件。
+一个基于 [Selenium](https://www.selenium.dev/) 的 Bilibili 专栏文章下载工具，可以将专栏文章下载为 Markdown 或 HTML 格式的文件。
 
 支持两种模式（贴入链接自动识别）：
 - 批量：下载指定专栏文集下的所有文章

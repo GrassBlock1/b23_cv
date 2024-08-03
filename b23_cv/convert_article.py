@@ -8,7 +8,7 @@ from b23_cv import cleanup_filename
 from b23_cv.download_image import download_image
 
 
-def __main__(html_content, title, format,output_folder):
+def __main__(html_content, title, export_format, output_folder):
     # 使用BeautifulSoup解析HTML
     soup = BeautifulSoup(html_content, 'html.parser')
 
@@ -27,7 +27,7 @@ def __main__(html_content, title, format,output_folder):
         if local_img_path:
             img['src'] = os.path.relpath(local_img_path, start=output_folder)
 
-    if format == "markdown":
+    if export_format == "markdown":
         # 将HTML内容转换为Markdown
         markdown_content = markdownify.markdownify(str(soup), heading_style="ATX")
 
